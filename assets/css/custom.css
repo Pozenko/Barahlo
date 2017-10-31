@@ -41,7 +41,39 @@
     color: white;
     outline: none !important;
 }
-
+/*top menu user dropdown*/
+.my_badge
+{
+    background-color: #1178B6;
+    color: white;
+    margin-left: 10px;
+}
+.my_fa
+{
+    margin-right: 10px;
+}
+.my_user_dropdown
+{
+    border: 1px solid #1178B6;
+}
+.my_user_dropdown li
+{
+    border-color: #1178B6;
+}
+.my_user_dropdown li a
+{
+    color: #1178B6;
+}
+.my_user_dropdown li a:hover
+{
+    color: #1069A0;
+    background-color: white;
+}
+.my_divider
+{
+    border: 0.5px solid  #1178B6;
+}
+/*end user dropdown*/
 .my_input
 {
     background-color: #1178B6;
@@ -103,6 +135,16 @@
     border-color: #1069A0;
     color: #1069A0;
     outline: none !important;
+}
+.my_modal_footer
+{
+    border-top-color: #1178B6;
+}
+
+/*helper classes*/
+.my_display_none
+{
+    display: none;
 }
 @media only screen and (max-width: 992px) {
     .brand_img

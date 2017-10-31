@@ -36,6 +36,40 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
                 <button class="btn my_btn" data-toggle="modal" data-target="#enterModal">вход</button>
+<!--                logined user menu (display: none)-->
+                <div class="dropdown my_display_none">
+                    <button class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
+                        User Name
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-right my_user_dropdown">
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-shopping-bag my_fa" aria-hidden="true"></i>
+                                Мои объявления
+                                <span class="badge my_badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fa fa-comment my_fa" aria-hidden="true"></i>
+                                Сообщения
+                                <span class="badge my_badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-user-circle my_fa" aria-hidden="true"></i>
+                                Мой аккаунт
+                            </a>
+                        </li>
+                        <li role="separator" class="divider my_divider"></li>
+                        <li>
+                            <a href="#"><i class="fa fa-sign-out my_fa" aria-hidden="true"></i>
+                                Выход
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
@@ -70,7 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         <button type="submit" class="btn my_modal_btn">Войти</button>
                     </form>
                 </div>
-                <div class="modal-footer">
+                <div class="modal-footer my_modal_footer">
                     <button type="button" class="btn my_modal_btn" data-dismiss="modal">Регистрация</button>
                 </div>
             </div>
