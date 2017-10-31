@@ -1,0 +1,71 @@
+/*top menu*/
+.top_menu
+{
+    height: 80px;
+    background-color: #1178B6;
+    padding: 23px 30px;
+}
+.brand_img
+{
+    background-image: url("/assets/imgs/navbar/brand_icon.png");
+    background-size: cover;
+    height: 80px;
+    width: 80px;
+    margin-top: -23px;
+}
+.brand_font
+{
+    font-family: 'Pacifico', cursive;
+    color: white;
+    font-size: 30px;
+    padding-left: 80px;
+    line-height: 55px;
+}
+
+.my_btn
+{
+    border-color: white;
+    color: white;
+    background-color: #1178B6;
+}
+.my_btn:active, .my_btn:focus
+{
+    background-color: #1069A0;
+    border-color: white;
+    color: white;
+    outline: none !important;
+}
+.my_btn:hover
+{
+    border-color: white;
+    color: white;
+    outline: none !important;
+}
+
+.my_input
+{
+    background-color: #1178B6;
+    border-color: white;
+    color: white;
+
+    -webkit-box-shadow: inset 0 1px 1px rgba(18, 105, 158, .075);
+    box-shadow: inset 0 1px 1px rgba(18, 105, 158, .075);
+}
+.my_input:focus
+{
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: #1069A0;
+    border-color: white;
+}
+
+@media only screen and (max-width: 992px) {
+    .brand_img
+    {
+        display: none;
+    }
+    .brand_font
+    {
+        display: none;
+    }
+}
