@@ -58,10 +58,10 @@
       <file leaf-file-name="header.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
-              <caret line="106" column="56" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="56" />
+            <state relative-caret-position="170">
+              <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="46" />
               <folding>
-                <marker date="1509471234000" expanded="true" signature="769:771" ph="..." />
+                <marker date="1509472650000" expanded="true" signature="769:771" ph="..." />
               </folding>
             </state>
           </provider>
@@ -70,8 +70,8 @@
       <file leaf-file-name="custom.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="900">
-              <caret line="140" column="29" lean-forward="false" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+            <state relative-caret-position="-1148">
+              <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -345,12 +345,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1509350653607</updated>
-      <workItem from="1509350655771" duration="33578000" />
+      <workItem from="1509350655771" duration="34852000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33578000" />
+    <option name="totallyTimeSpent" value="34852000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="961" extended-state="0" />
@@ -575,18 +575,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/application/views/templates/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="106" column="56" lean-forward="false" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="56" />
+        <state relative-caret-position="170">
+          <caret line="85" column="46" lean-forward="false" selection-start-line="85" selection-start-column="33" selection-end-line="85" selection-end-column="46" />
           <folding>
-            <marker date="1509471234000" expanded="true" signature="769:771" ph="..." />
+            <marker date="1509472650000" expanded="true" signature="769:771" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/custom.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="900">
-          <caret line="140" column="29" lean-forward="false" selection-start-line="140" selection-start-column="29" selection-end-line="140" selection-end-column="29" />
+        <state relative-caret-position="-1148">
+          <caret line="41" column="29" lean-forward="true" selection-start-line="41" selection-start-column="29" selection-end-line="41" selection-end-column="29" />
           <folding />
         </state>
       </provider>

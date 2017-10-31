@@ -83,10 +83,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-body">
 <!--                    login form-->
-                    <form>
+                    <form class="my_modal_form">
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon my_input_addon" id="basic-addon1">
+                                <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1">
@@ -94,18 +94,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </div>
                         <div class="form-group">
                             <div class="input-group">
-                                <span class="input-group-addon my_input_addon" id="basic-addon1">
+                                <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-key" aria-hidden="true"></i>
                                 </span>
                                 <input type="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1">
                             </div>
                         </div>
                         <a href="#">Забыли пароль?</a><br><br>
-                        <button type="submit" class="btn my_modal_btn">Войти</button>
+                        <button type="submit" class="btn my_btn">Войти</button>
                     </form>
                 </div>
                 <div class="modal-footer my_modal_footer">
-                    <button type="button" class="btn my_modal_btn" data-dismiss="modal">Регистрация</button>
+                    <button type="button" class="btn my_btn" data-dismiss="modal">Регистрация</button>
                 </div>
             </div>
 

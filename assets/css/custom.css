@@ -41,39 +41,39 @@
     color: white;
     outline: none !important;
 }
-/*top menu user dropdown*/
-.my_badge
-{
-    background-color: #1178B6;
-    color: white;
-    margin-left: 10px;
-}
-.my_fa
-{
-    margin-right: 10px;
-}
-.my_user_dropdown
-{
-    border: 1px solid #1178B6;
-}
-.my_user_dropdown li
-{
-    border-color: #1178B6;
-}
-.my_user_dropdown li a
-{
-    color: #1178B6;
-}
-.my_user_dropdown li a:hover
-{
-    color: #1069A0;
-    background-color: white;
-}
-.my_divider
-{
-    border: 0.5px solid  #1178B6;
-}
-/*end user dropdown*/
+    /*top menu user dropdown*/
+    .my_badge
+    {
+        background-color: #1178B6;
+        color: white;
+        margin-left: 10px;
+    }
+    .my_fa
+    {
+        margin-right: 10px;
+    }
+    .my_user_dropdown
+    {
+        border: 1px solid #1178B6;
+    }
+    .my_user_dropdown li
+    {
+        border-color: #1178B6;
+    }
+    .my_user_dropdown li a
+    {
+        color: #1178B6;
+    }
+    .my_user_dropdown li a:hover
+    {
+        color: #1069A0;
+        background-color: white;
+    }
+    .my_divider
+    {
+        border: 0.5px solid  #1178B6;
+    }
+    /*end user dropdown*/
 .my_input
 {
     background-color: #1178B6;
@@ -90,45 +90,31 @@
     background-color: #1069A0;
     border-color: white;
 }
+/*end top menu*/
 
 /*modal window*/
 .my_modal_body
 {
     border-radius: 6px;
 }
+.my_modal_form a
+{
+    color: white;
+}
 .my_modal_style
 {
-    background-color: white;
-    color: #1178B6;
+    background-color: #1178B6;
+    color: white;
     border-radius: 6px;
-    border: 2px solid #1178B6;
+    border: 2px solid white;
 }
 .my_modal_header
 {
     border-bottom: none;
 }
-.my_input_addon
-{
-    background-color: white;
-    color: #1178B6;
-    border-color: #1178B6;
-}
 .my_modal_input
 {
-    border-color: #1178B6;
-}
-.my_modal_btn
-{
-    border-color: #1178B6;
-    color: #1178B6;
-    background-color: white;
-}
-.my_modal_btn:focus, .my_modal_btn:active
-{
-    background-color: white;
-    border-color: #1069A0;
-    color: #1069A0;
-    outline: none !important;
+    border-color: white;
 }
 .my_modal_btn:hover
 {
@@ -138,8 +124,9 @@
 }
 .my_modal_footer
 {
-    border-top-color: #1178B6;
+    border-top: 1px solid white;
 }
+/*end modal window*/
 
 /*helper classes*/
 .my_display_none
