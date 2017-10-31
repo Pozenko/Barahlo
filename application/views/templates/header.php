@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?= asset_url(); ?>js/bootstrap.min.js"></script>
     </head>
     <body>
-<!--    menu top-->
+<!--    Menu top-->
     <div class="container-fluid top_menu">
         <div class="row">
             <div class="col-lg-4 col-md-3">
@@ -39,42 +39,39 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
         </div>
     </div>
-<!--    modal window-->
-<!-- Modal -->
+<!--    Modal window-->
     <div id="enterModal" class="modal fade" role="dialog">
         <div class="modal-dialog">
-
             <!-- Modal content-->
-            <div class="modal-content">
-<!--                <div class="modal-header">-->
-<!--                    <button type="button" class="close" data-dismiss="modal">&times;</button>-->
-<!--                    <h4 class="modal-title">Modal Header</h4>-->
-<!--                </div>-->
+            <div class="modal-content my_modal_style">
+                <div class="modal-header my_modal_header">
+                    <h4 class="modal-title">Вход</h4>
+                </div>
                 <div class="modal-body">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-<!--                    nav tabs-->
-                    <div role="tabpanel">
-                        <ul class="nav nav-tabs nav-justified">
-                            <li role="presentation" class="active">
-                                <a  href="#loginTab" aria-controls="loginTab" role="tab" data-toggle="tab">Вход</a>
-                            </li>
-                            <li role="presentation">
-                                <a href="#registerTab" aria-controls="registerTab" role="tab" data-toggle="tab">Регистрация</a>
-                            </li>
-                        </ul>
-<!--                        tab content-->
-                        <div class="tab-content">
-                        <!--login tab-->
-                            <div role="tabpanel" class="tab-pane active" id="loginTab">
-
+<!--                    login form-->
+                    <form>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon my_input_addon" id="basic-addon1">
+                                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                </span>
+                                <input type="text" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1">
                             </div>
-                            <div role="tabpanel" class="tab-pane" id="registerTab">register</div>
                         </div>
-                    </div>
-                    <p>Some text in the modal.</p>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon my_input_addon" id="basic-addon1">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </span>
+                                <input type="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1">
+                            </div>
+                        </div>
+                        <a href="#">Забыли пароль?</a><br><br>
+                        <button type="submit" class="btn my_modal_btn">Войти</button>
+                    </form>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn my_modal_btn" data-dismiss="modal">Регистрация</button>
                 </div>
             </div>
 

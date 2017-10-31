@@ -59,6 +59,51 @@
     border-color: white;
 }
 
+/*modal window*/
+.my_modal_body
+{
+    border-radius: 6px;
+}
+.my_modal_style
+{
+    background-color: white;
+    color: #1178B6;
+    border-radius: 6px;
+    border: 2px solid #1178B6;
+}
+.my_modal_header
+{
+    border-bottom: none;
+}
+.my_input_addon
+{
+    background-color: white;
+    color: #1178B6;
+    border-color: #1178B6;
+}
+.my_modal_input
+{
+    border-color: #1178B6;
+}
+.my_modal_btn
+{
+    border-color: #1178B6;
+    color: #1178B6;
+    background-color: white;
+}
+.my_modal_btn:focus, .my_modal_btn:active
+{
+    background-color: white;
+    border-color: #1069A0;
+    color: #1069A0;
+    outline: none !important;
+}
+.my_modal_btn:hover
+{
+    border-color: #1069A0;
+    color: #1069A0;
+    outline: none !important;
+}
 @media only screen and (max-width: 992px) {
     .brand_img
     {
