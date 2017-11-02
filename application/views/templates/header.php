@@ -24,7 +24,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div class="container-fluid top_menu">
         <div class="row">
             <div class="col-lg-4 col-md-3">
-                <a class="navbar-brand brand_img" href="#">
+                <a class="navbar-brand brand_img" href="<?=base_url();?>">
                     <span class="brand_font">Barahlo</span>
                 </a>
             </div>
@@ -87,13 +87,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-body">
 <!--                    login form-->
-                    <form class="my_modal_form">
+                    <form class="my_modal_form" name="signin" action="">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </span>
-                                <input type="text" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1" maxlength="25">
+                                <input type="text" name="email" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1" maxlength="25">
                             </div>
                         </div>
                         <div class="form-group">
@@ -101,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-key" aria-hidden="true"></i>
                                 </span>
-                                <input type="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1" maxlength="16">
+                                <input type="password" name="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1" maxlength="16">
                             </div>
                         </div>
                         <a href="#">Забыли пароль?</a><br><br>

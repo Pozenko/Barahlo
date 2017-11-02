@@ -1,6 +1,8 @@
 $(document).ready(function()
 {
+    //phone input mask
     $("#inputPhone").mask("+99999 999 99 99");
+
     // set Bootstrap classes default
     $.validator.setDefaults({
         highlight: function(element) {
@@ -19,6 +21,7 @@ $(document).ready(function()
             }
         }
     });
+
     // registration form rules
     $("form[name='registration']").validate({
 
@@ -52,8 +55,42 @@ $(document).ready(function()
             password2: {
                 equalTo: "Пароли не совпадают. Введите пароль еще раз."
             },
-            email: "Пожалуйста укажите корректный email",
+            email: {
+                required: "Пожалуйста укажите email",
+                email: "Пожалуйста укажите корректный email"
+            },
             city: "Пожалуйста выберите город"
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+    // signin form rules
+    $("form[name='signin']").validate({
+
+        rules: {
+            email: {
+                required: true,
+                email: true
+            },
+            password: {
+                required: true,
+                minlength: 6
+            }
+        },
+        // Specify validation error messages
+        messages: {
+            password: {
+                required: "Пожалуйста укажите пароль.",
+                minlength: "Ваш пароль должен содержать минимум 6 символов."
+            },
+            email: {
+                required: "Пожалуйста укажите email",
+                email: "Пожалуйста укажите корректный email"
+            }
         },
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid

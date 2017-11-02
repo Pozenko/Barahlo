@@ -1,3 +1,9 @@
+:root
+{
+    --my-def-color-blue: #1178B6;
+    --my-def-color-darkBlue: #1069A0;
+}
+
 body
 {
     background-color: #eee;
@@ -6,7 +12,7 @@ body
 .top_menu
 {
     height: 80px;
-    background-color: #1178B6;
+    background-color: var( --my-def-color-blue);
     padding: 23px 30px;
 }
 .brand_img
@@ -30,11 +36,11 @@ body
 {
     border-color: white;
     color: white;
-    background-color: #1178B6;
+    background-color: var( --my-def-color-blue);
 }
 .my_btn:active, .my_btn:focus
 {
-    background-color: #1069A0;
+    background-color: var(--my-def-color-darkBlue);
     border-color: white;
     color: white;
     outline: none !important;
@@ -48,7 +54,7 @@ body
     /*top menu user dropdown*/
     .my_badge
     {
-        background-color: #1178B6;
+        background-color: var( --my-def-color-blue);
         color: white;
         margin-left: 10px;
     }
@@ -58,29 +64,29 @@ body
     }
     .my_user_dropdown
     {
-        border: 1px solid #1178B6;
+        border: 1px solid var( --my-def-color-blue);
     }
     .my_user_dropdown li
     {
-        border-color: #1178B6;
+        border-color: var( --my-def-color-blue);
     }
     .my_user_dropdown li a
     {
-        color: #1178B6;
+        color: var( --my-def-color-blue);
     }
     .my_user_dropdown li a:hover
     {
-        color: #1069A0;
+        color: var(--my-def-color-darkBlue);
         background-color: white;
     }
     .my_divider
     {
-        border: 0.5px solid  #1178B6;
+        border: 0.5px solid  var( --my-def-color-blue);
     }
     /*end user dropdown*/
 .my_input
 {
-    background-color: #1178B6;
+    background-color: var( --my-def-color-blue);
     border-color: white;
     color: white;
 
@@ -91,7 +97,7 @@ body
 {
     outline: none !important;
     box-shadow: none !important;
-    background-color: #1069A0;
+    background-color: var(--my-def-color-darkBlue);
     border-color: white;
 }
 /*end top menu*/
@@ -107,7 +113,7 @@ body
 }
 .my_modal_style
 {
-    background-color: #1178B6;
+    background-color: var( --my-def-color-blue);
     color: white;
     border-radius: 6px;
     border: 2px solid white;
@@ -122,8 +128,8 @@ body
 }
 .my_modal_btn:hover
 {
-    border-color: #1069A0;
-    color: #1069A0;
+    border-color: var(--my-def-color-darkBlue);
+    color: var(--my-def-color-darkBlue);
     outline: none !important;
 }
 .my_modal_footer
@@ -132,12 +138,36 @@ body
 }
 /*end modal window*/
 
-/*helper classes*/
-.my_display_none
+/*home page*/
+.my_rev_btn
 {
-    display: none;
+    border-color: var( --my-def-color-blue);
+    color: var( --my-def-color-blue);
+    background-color: white;
 }
-/*end helper classes*/
+.my_rev_btn:active, .my_rev_btn:focus
+{
+    background-color: white;
+    border-color: var(--my-def-color-darkBlue);
+    color: var(--my-def-color-darkBlue);
+    outline: none !important;
+}
+.my_rev_btn:hover
+{
+    border-color: var(--my-def-color-darkBlue);
+    color: var(--my-def-color-darkBlue);
+}
+
+.my_home_container
+{
+    padding: 20px;
+}
+.my_cat_row
+{
+    margin-top: 20px;
+}
+/*end home page*/
+
 
 /*registration page*/
 .my_row_bg
@@ -147,7 +177,7 @@ body
 }
 .my_center_container
 {
-    padding: 150px 0;
+    padding: 150px 10px;
 
 }
 .my_center_container h1
@@ -157,15 +187,22 @@ body
 /*end registration page*/
 
 /*footer*/
-
 .my_footer_container
 {
     height: 150px;
     color: white;
     padding: 75px;
-    background-color: #1069A0;
+    background-color: var( --my-def-color-blue);
 }
 /*end footer*/
+
+/*helper classes*/
+.my_display_none
+{
+    display: none;
+}
+/*end helper classes*/
+
 @media only screen and (max-width: 992px) {
     .brand_img
     {
