@@ -15,6 +15,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--        javascript-->
         <script type="text/javascript" src="<?= js_url(); ?>jquery-3.2.1.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>jquery.validate.min.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>jquery.mask.min.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>form_validation.js"></script>
     </head>
     <body>
 <!--    Menu top-->
@@ -90,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </span>
-                                <input type="text" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1">
+                                <input type="text" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1" maxlength="25">
                             </div>
                         </div>
                         <div class="form-group">
@@ -98,7 +101,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-key" aria-hidden="true"></i>
                                 </span>
-                                <input type="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1">
+                                <input type="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1" maxlength="16">
                             </div>
                         </div>
                         <a href="#">Забыли пароль?</a><br><br>
