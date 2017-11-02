@@ -109,7 +109,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </form>
                 </div>
                 <div class="modal-footer my_modal_footer">
-                    <button type="button" class="btn my_btn" data-dismiss="modal">Регистрация</button>
+                    <a href="<?=base_url(). 'register';?>" class="btn my_btn">Регистрация</a>
                 </div>
             </div>
 
