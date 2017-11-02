@@ -1,3 +1,7 @@
+body
+{
+    background-color: #eee;
+}
 /*top menu*/
 .top_menu
 {
@@ -133,6 +137,35 @@
 {
     display: none;
 }
+/*end helper classes*/
+
+/*registration page*/
+.my_row_bg
+{
+    background-color: white;
+    box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.20);
+}
+.my_center_container
+{
+    padding: 50px;
+    height: 80vh;
+}
+.my_center_container h1
+{
+    margin-bottom: 50px;
+}
+/*end registration page*/
+
+/*footer*/
+
+.my_footer_container
+{
+    height: 150px;
+    color: white;
+    padding: 75px;
+    background-color: #1069A0;
+}
+/*end footer*/
 @media only screen and (max-width: 992px) {
     .brand_img
     {

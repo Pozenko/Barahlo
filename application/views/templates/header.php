@@ -7,13 +7,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <meta charset="utf-8">
         <title><?= $title ?></title>
 <!--        css-->
-        <link rel="stylesheet" href="<?= asset_url(); ?>css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="<?= asset_url(); ?>css/font-awesome.min.css"/>
-        <link rel="stylesheet" href="<?= asset_url(); ?>css/custom.css"/>
+        <link rel="stylesheet" href="<?= css_url(); ?>bootstrap.min.css"/>
+        <link rel="stylesheet" href="<?= css_url(); ?>font-awesome.min.css"/>
+        <link rel="stylesheet" href="<?= css_url(); ?>custom.css"/>
+<!--        font-->
         <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 <!--        javascript-->
-        <script type="text/javascript" src="<?= asset_url(); ?>js/jquery-3.2.1.min.js"></script>
-        <script type="text/javascript" src="<?= asset_url(); ?>js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>bootstrap.min.js"></script>
     </head>
     <body>
 <!--    Menu top-->
@@ -36,7 +37,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
                 <button class="btn my_btn" data-toggle="modal" data-target="#enterModal">вход</button>
-<!--                logined user menu (display: none)-->
+<!--                login user menu (display: none)-->
                 <div class="dropdown my_display_none">
                     <button class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
                         User Name
