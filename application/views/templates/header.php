@@ -18,6 +18,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?= js_url(); ?>jquery.validate.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>jquery.mask.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>form_validation.js"></script>
+        <script type="text/javascript" src="<?= js_url(); ?>custom.js"></script>
     </head>
     <body>
 <!--    Menu top-->
@@ -109,7 +110,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </form>
                 </div>
                 <div class="modal-footer my_modal_footer">
-                    <a href="<?=base_url(). 'register';?>" class="btn my_btn">Регистрация</a>
+                    <a href="<?=base_url();?>register" class="btn my_btn">Регистрация</a>
                 </div>
             </div>
 
