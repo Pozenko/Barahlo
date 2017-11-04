@@ -173,11 +173,6 @@ body
 }
 
 /*advert*/
-.my_panel_body
-{
-    padding-top: 0;
-    padding-bottom: 0;
-}
 .my_table td
 {
 
@@ -186,9 +181,6 @@ body
 .my_img_container
 {
     height: 125px;
-    width: 230px;
-    padding: 0;
-    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -198,42 +190,30 @@ body
 {
     flex-shrink: 0;
     min-width: 100%;
-    min-height: 100%
+    min-height: 100%;
 }
-.my_td_img
+.my_panel
 {
-    padding: 0 !important;
+    margin: 0 15px;
 }
-.my_td_header
+.my_panel_body
 {
-    padding-left: 30px !important;
-    height: 80%;
+    height: 125px;
+    padding: 0;
 }
-.my_td_header a
+.my_advert_title
 {
     color: black;
-    font-size: 20px;
 }
-.my_td_header a:hover
+.my_advert_title:hover
 {
     color: var(--my-def-color-darkBlue);
     text-decoration: none;
 }
-.my_td_footer
-{
-    padding: 0!important;
-}
-.my_td_footer small, .my_footer_title
-{
-    padding-left: 30px;
-}
 .my_price
 {
     color: var(--my-def-color-blue);
-    font-size: 24px;
     padding-right: 10px;
-    padding-bottom: 5px;
-    float: right;
 }
 /* end advert*/
 /*end home page*/
@@ -265,6 +245,30 @@ body
     background-color: var( --my-def-color-blue);
 }
 /*end footer*/
+/*advert page*/
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+.my_advert_panel
+{
+    margin-top: 15px;
+}
+.my_advert_panel button
+{
+    margin-top: 15px;
+}
+.my_carousel
+{
+    margin-top: 15px;
+}
+.my_comment_form button
+{
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+/*end advert page*/
 
 /*helper classes*/
 .my_display_none
@@ -272,6 +276,9 @@ body
     display: none;
 }
 /*end helper classes*/
+
+
+
 
 @media only screen and (max-width: 992px) {
     .brand_img
@@ -282,50 +289,13 @@ body
     {
         display: none;
     }
-
-    .my_footer_cat
+    .my_advert_title h4
     {
-        display: none;
-    }
-    .my_img_container
-    {
-        height: 125px;
-        width: 205px;
-    }
-    .my_td_header a
-    {
-        color: black;
-        font-size: 18px;
-    }
-}
-@media only screen and (max-width: 630px) {
-    .my_img_container
-    {
-        height: 125px;
-        width: 150px;
-    }
-    .my_footer_city
-    {
-        display: none;
+        font-size: 16px;
     }
     .my_price
     {
-        font-size: 20px;
-    }
-}
-@media only screen and (max-width: 460px) {
-    .my_img_container
-    {
-        height: 100px;
-        width: 100px;
-    }
-    .my_td_footer small
-    {
-        display: none;
-    }
-    .my_td_header a
-    {
-        color: black;
         font-size: 16px;
     }
+
 }

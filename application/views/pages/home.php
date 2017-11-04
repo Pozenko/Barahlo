@@ -60,44 +60,44 @@
             <div class="row">
                 <ul class="list-unstyled col-lg-12">
                     <li>
-                        <table class="table my_table">
-                            <tbody>
-                            <tr>
-<!--                               advert image-->
-                                <td rowspan="3" class="col-lg-1 col-md-1 col-sm-1 col-xs-1 my_td_img">
-                                    <div class="my_img_container">
-                                        <a href="" >
-                                            <img src="<?=imgs_url();?>testIMG.jpeg" alt="">
-                                        </a>
+                        <div class="row">
+                            <div class="panel panel-default my_panel">
+                                <div class="panel-body my_panel_body">
+                                    <div class="row">
+                                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4" style="max-width: 260px">
+                                            <div class="my_img_container">
+                                                <a href="" >
+                                                    <img src="<?=imgs_url();?>testIMG.jpeg" alt="">
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-7 col-md-6 col-sm-6 col-xs-5">
+                                            <a href="" class="my_advert_title">
+                                                <h4>Title advertg fdgf  dhhdfghfddfgf dfdfhgfdhdfg dhdfh df df hdfh df dh d</h4>
+                                            </a>
+                                        </div>
+                                        <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 text-right">
+                                            <h4 class="my_price">2300 р.</h4>
+                                        </div>
                                     </div>
-                                </td>
-<!--                               advert header-->
-                                <td class="col-lg-10 col-md-9 col-sm-9 col-xs-8 my_td_header">
-                                    <a href="">Тайтле товара ыфа ыфа вавыавыа в</a>
-                                </td>
-<!--                               advert price-->
-                                <td class="col-lg-1 col-md-2 col-sm-2 col-xs-3">
-                                    <span class="my_price">23 р.</span>
-                                </td>
-                            </tr>
-                            <tr>
-<!--                               advert footer-->
-                                <td colspan="3" class="col-lg-10 col-md-9 col-sm-9 col-xs-8 my_td_footer">
-                                    <small>12.30.2017 12:30</small>
-                                    <span class="my_footer_cat">
-                                        <span class="text-muted my_footer_title">Категория:</span>
-                                        <span>Название категории</span>
-                                    </span>
-                                    <span class="text-muted my_footer_title">Тип:</span>
-                                    <span>Продажа</span>
-                                    <span class="my_footer_city">
-                                        <span class="text-muted my_footer_title">Город:</span>
-                                        <span>Минск</span>
-                                    </span>
-                                </td>
-                            </tr>
-                            </tbody>
-                        </table>
+                                </div>
+                                <div class="panel-footer">
+                                    <div class="row">
+                                        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
+                                            <small>12 сент 17</small>
+                                        </div>
+                                        <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
+                                            <small class="text-muted">Категория:</small>
+                                            <small>Название категории</small>
+                                        </div>
+                                        <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
+                                            <small class="text-muted">Тип сделки:</small>
+                                            <small>Продажа</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
                 </ul>
             </div>
