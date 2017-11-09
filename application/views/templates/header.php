@@ -40,9 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
-                <button class="btn my_btn" data-toggle="modal" data-target="#enterModal">вход</button>
+                <button class="btn my_btn my_display_none" data-toggle="modal" data-target="#enterModal">вход</button>
 <!--                login user menu (display: none)-->
-                <div class="dropdown my_display_none">
+                <div class="dropdown ">
                     <button class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
                         User Name
                         <span class="caret"></span>
@@ -60,6 +60,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                                 <i class="fa fa-comment my_fa" aria-hidden="true"></i>
                                 Сообщения
                                 <span class="badge my_badge">3</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-plus my_fa" aria-hidden="true"></i>
+                                Добавить объявление
                             </a>
                         </li>
                         <li>

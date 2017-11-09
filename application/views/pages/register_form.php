@@ -4,7 +4,7 @@
 
         </div>
         <div class="my_center_container col-lg-8">
-            <h1>Регистрация</h1>
+            <h3>Регистрация</h3>
             <form class="form-horizontal" action="" name="registration">
                 <div class="form-group">
                     <label for="inputName" class="col-sm-2 control-label">Имя</label>

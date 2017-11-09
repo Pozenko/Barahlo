@@ -8,6 +8,7 @@ body
 {
     background-color: #eee;
 }
+
 /*top menu*/
 .top_menu
 {
@@ -166,6 +167,7 @@ body
 .my_home_container
 {
     padding: 20px;
+    height: 100vh;
 }
 .my_cat_row
 {
@@ -215,6 +217,10 @@ body
     color: var(--my-def-color-blue);
     padding-right: 10px;
 }
+#commentSubmit
+{
+    margin-bottom: 80px;
+}
 /* end advert*/
 /*end home page*/
 
@@ -230,7 +236,7 @@ body
     padding: 150px 10px;
 
 }
-.my_center_container h1
+.my_center_container h3
 {
     margin-bottom: 50px;
 }
@@ -269,6 +275,18 @@ body
 }
 
 /*end advert page*/
+
+/*create page*/
+.my_create_col
+{
+    padding: 80px 40px;
+    height: 100vh;
+}
+.my_create_col form
+{
+    margin-top: 50px;
+}
+/*end create page*/
 
 /*helper classes*/
 .my_display_none

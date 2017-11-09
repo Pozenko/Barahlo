@@ -88,11 +88,13 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="form-group my_comment_form">
-                        <label for="comment">Комментарий:</label>
-                        <textarea class="form-control" rows="5" id="comment"></textarea>
-                        <button type="submit" class="btn my_rev_btn">Добавить комментарий</button>
-                    </div>
+                    <form action="" name="commentForm">
+                        <div class="form-group my_comment_form">
+                            <label for="cmt">Комментарий:</label>
+                            <textarea class="form-control" rows="5" id="cmt" name="comment"></textarea>
+                        </div>
+                        <button id="commentSubmit" type="submit" class="btn my_rev_btn">Добавить комментарий</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -117,7 +119,7 @@
                     </div>
                     <div class="row">
                         <div class="col-lg-12">
-                            <button class="btn my_rev_btn">
+                            <button class="btn my_rev_btn" data-toggle="modal" data-target="#messageModal">
                                 <i class="fa fa-comments-o" aria-hidden="true"></i>
                                 Написать сообщение
                             </button>
@@ -147,6 +149,28 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--modal message window-->
+<div id="messageModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Сообщение</h4>
+            </div>
+            <div class="modal-body">
+                <!--                    message form-->
+                <form name="messageForm" action="">
+                    <div class="form-group ">
+                        <label for="msg">Текст сообщения:</label>
+                        <textarea class="form-control" rows="5" id="msg" name="message"></textarea>
+                    </div>
+                    <button type="submit" class="btn my_rev_btn">Отправить сообщение</button>
+                </form>
             </div>
         </div>
     </div>

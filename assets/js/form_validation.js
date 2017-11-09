@@ -23,7 +23,7 @@ $(document).ready(function()
     });
 
     // registration form rules
-    $("form[name='registration']").validate({
+    $("form[name='registration'], form[name='account']").validate({
 
         rules: {
             name: {
@@ -98,5 +98,81 @@ $(document).ready(function()
             form.submit();
         }
     });
+
+    // message form rules
+    $("form[name='messageForm']").validate({
+
+        rules: {
+            message: {
+                required: true
+            }
+        },
+        // Specify validation error messages
+        messages: {
+            message: {
+                required: "Сообщение не может быть пустым."
+            }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+    // comment form rules
+    $("form[name='commentForm']").validate({
+
+        rules: {
+            comment: {
+                required: true
+            }
+        },
+        // Specify validation error messages
+        messages: {
+            comment: {
+                required: "Комментарий не может быть пустым."
+            }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
+    // create form rules
+    $("form[name='create']").validate({
+
+        rules: {
+            title: {
+                required: true
+            },
+            description:{
+                required: true
+            },
+            sellingOptions:{
+                required: true
+            }
+        },
+        // Specify validation error messages
+        messages: {
+            title: {
+                required: "Заголовок не может быть пустым."
+            },
+            description: {
+                required: "Пожалуйста добавте описание."
+            },
+            sellingOptions:{
+                required: "Пожалуйста выберите тип сделки."
+            }
+        },
+        // Make sure the form is submitted to the destination defined
+        // in the "action" attribute of the form when valid
+        submitHandler: function(form) {
+            form.submit();
+        }
+    });
+
 });
 
