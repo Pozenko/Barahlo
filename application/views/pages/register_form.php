@@ -6,11 +6,11 @@
         <div class="my_center_container col-lg-8">
             <h3>Регистрация</h3>
             <form class="form-horizontal" method="post" action="<?=base_url()?>register" name="registration">
-                <div class="form-group <?php if(form_error('login')){echo 'has-error';} ?>">
-                    <label for="inputLogin" class="col-sm-2 control-label">Логин</label>
+                <div class="form-group <?php if(form_error('name')){echo 'has-error';} ?>">
+                    <label for="inputName" class="col-sm-2 control-label">Имя</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputLogin" name="login" value="<?=set_value('login'); ?>" placeholder="Имя" maxlength="25">
-                        <?=form_error('login','<span class="label label-danger">', '</span>'); ?>
+                        <input type="text" class="form-control" id="inputName" name="name" value="<?=set_value('name'); ?>" placeholder="Имя" maxlength="25">
+                        <?=form_error('name','<span class="label label-danger">', '</span>'); ?>
                     </div>
                 </div>
                 <div class="form-group <?php if(form_error('email')){echo 'has-error';} ?>">

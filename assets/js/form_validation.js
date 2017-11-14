@@ -26,7 +26,7 @@ $(document).ready(function()
     $("form[name='registration'], form[name='account']").validate({
 
         rules: {
-            login: {
+            name: {
                 required: true,
                 minlength: 2
             },
@@ -47,7 +47,7 @@ $(document).ready(function()
         },
         // Specify validation error messages
         messages: {
-            login: "Пожалуйста укажите логин.",
+            name: "Пожалуйста укажите имя.",
             password1: {
                 required: "Пожалуйста укажите пароль.",
                 minlength: "Ваш пароль должен содержать минимум 6 символов."
