@@ -26,7 +26,7 @@ $(document).ready(function()
     $("form[name='registration'], form[name='account']").validate({
 
         rules: {
-            name: {
+            login: {
                 required: true,
                 minlength: 2
             },
@@ -47,7 +47,7 @@ $(document).ready(function()
         },
         // Specify validation error messages
         messages: {
-            name: "Пожалуйста укажите имя.",
+            login: "Пожалуйста укажите логин.",
             password1: {
                 required: "Пожалуйста укажите пароль.",
                 minlength: "Ваш пароль должен содержать минимум 6 символов."
@@ -56,10 +56,10 @@ $(document).ready(function()
                 equalTo: "Пароли не совпадают. Введите пароль еще раз."
             },
             email: {
-                required: "Пожалуйста укажите email",
-                email: "Пожалуйста укажите корректный email"
+                required: "Пожалуйста укажите Email.",
+                email: "Пожалуйста укажите корректный email."
             },
-            city: "Пожалуйста выберите город"
+            city: "Пожалуйста выберите город."
         },
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid

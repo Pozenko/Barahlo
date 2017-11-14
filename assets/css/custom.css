@@ -234,6 +234,7 @@ body
 .my_center_container
 {
     padding: 150px 10px;
+    height: 100vh;
 
 }
 .my_center_container h3
