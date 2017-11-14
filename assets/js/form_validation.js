@@ -34,12 +34,12 @@ $(document).ready(function()
                 required: true,
                 email: true
             },
-            password: {
+            password1: {
                 required: true,
                 minlength: 6
             },
             password2: {
-                equalTo: "#password"
+                equalTo: "#password1"
             },
             city: {
                 required: true
@@ -47,8 +47,8 @@ $(document).ready(function()
         },
         // Specify validation error messages
         messages: {
-            name: "Пожалуйста введите ваше имя.",
-            password: {
+            name: "Пожалуйста укажите имя.",
+            password1: {
                 required: "Пожалуйста укажите пароль.",
                 minlength: "Ваш пароль должен содержать минимум 6 символов."
             },

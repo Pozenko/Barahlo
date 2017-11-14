@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?= js_url(); ?>bootstrap.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>jquery.validate.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>jquery.mask.min.js"></script>
-        <script type="text/javascript" src="<?= js_url(); ?>form_validation.js"></script>
+<!--        <script type="text/javascript" src="--><?//= js_url(); ?><!--form_validation.js"></script>-->
         <script type="text/javascript" src="<?= js_url(); ?>custom.js"></script>
     </head>
     <body>
@@ -40,9 +40,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
-                <button class="btn my_btn my_display_none" data-toggle="modal" data-target="#enterModal">вход</button>
+                <button class="btn my_btn " data-toggle="modal" data-target="#enterModal">вход</button>
 <!--                login user menu (display: none)-->
-                <div class="dropdown ">
+                <div class="dropdown my_display_none">
                     <button class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
                         User Name
                         <span class="caret"></span>
