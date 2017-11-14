@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <script type="text/javascript" src="<?= js_url(); ?>bootstrap.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>jquery.validate.min.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>jquery.mask.min.js"></script>
-<!--        <script type="text/javascript" src="--><?//= js_url(); ?><!--form_validation.js"></script>-->
+        <script type="text/javascript" src="<?= js_url(); ?>form_validation.js"></script>
         <script type="text/javascript" src="<?= js_url(); ?>custom.js"></script>
     </head>
     <body>
@@ -93,7 +93,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-body">
 <!--                    login form-->
-                    <form class="my_modal_form" name="signin" action="">
+                    <form class="my_modal_form" name="signin" method="post" action="">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon my_btn" id="basic-addon1">

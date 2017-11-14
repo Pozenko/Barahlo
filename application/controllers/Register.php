@@ -12,11 +12,13 @@ class Register extends CI_Controller
 //        Name
         $this->form_validation->set_rules('name', 'Username', 'trim|required|min_length[2]|max_length[25]|alpha_numeric',
             array(  'required' => 'Пожалуйста укажите имя',
-                    'min_length' => 'Имя должно содержать минимум 2 символа'));
+                    'min_length' => 'Имя должно содержать минимум {param} символа',
+                    'max_length' => 'Имя должно содержать максимум {param} символов',
+                    'alpha_numeric' => 'Имя может содержать только символы и цифры'));
 //        Password
         $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[6]',
             array(  'required' => 'Пожалуйста укажите пароль',
-                    'min_length' => 'Пароль должен содержать минимум 6 символов'));
+                    'min_length' => 'Пароль должен содержать минимум {param} символов'));
 //        Password2
         $this->form_validation->set_rules('password2', 'Password Confirmation', 'trim|required|matches[password1]',
             array(  'required' => 'Пожалуйста повторите пароль',
