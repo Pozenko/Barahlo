@@ -233,9 +233,8 @@ body
 }
 .my_center_container
 {
-    padding: 150px 10px;
-    height: 100vh;
-
+    padding: 100px 10px;
+    /*height: 100vh;*/
 }
 .my_center_container h3
 {
@@ -293,6 +292,10 @@ body
 .my_display_none
 {
     display: none;
+}
+.my_height_vh
+{
+    height: 100vh;
 }
 /*end helper classes*/
 

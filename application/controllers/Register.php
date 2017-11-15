@@ -2,34 +2,49 @@
 
 class Register extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->library('form_validation');
+    }
 
     public function index()
+    {
+        $this->load->model('city');
+        $data['title'] = 'Barahlo.by';
+        $data['cities'] = $this->city->getAllCity();
+
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/register_form', $data);
+        $this->load->view('templates/footer');
+
+    }
+    public function validate()
     {
         $data['title'] = 'Barahlo.by';
         $this->load->view('templates/header', $data);
 
-        $this->load->library('form_validation');
 //        Name
         $this->form_validation->set_rules('name', 'Username', 'trim|required|min_length[2]|max_length[25]|alpha_numeric',
             array(  'required' => 'Пожалуйста укажите имя',
-                    'min_length' => 'Имя должно содержать минимум {param} символа.',
-                    'max_length' => 'Имя должно содержать максимум {param} символов.',
-                    'alpha_numeric' => 'Имя может содержать только латинские символы и цифры.'));
+                'min_length' => 'Имя должно содержать минимум {param} символа.',
+                'max_length' => 'Имя должно содержать максимум {param} символов.',
+                'alpha_numeric' => 'Имя может содержать только латинские символы и цифры.'));
 //        Password
         $this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[6]',
             array(  'required' => 'Пожалуйста укажите пароль.',
-                    'min_length' => 'Пароль должен содержать минимум {param} символов.'));
+                'min_length' => 'Пароль должен содержать минимум {param} символов.'));
 //        Password2
         $this->form_validation->set_rules('password2', 'Password Confirmation', 'trim|required|matches[password1]',
             array(  'required' => 'Пожалуйста повторите пароль.',
-                    'matches' => 'Пароли не совпадают. Введите пароль еще раз.'));
+                'matches' => 'Пароли не совпадают. Введите пароль еще раз.'));
 //        Email
         $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email',
             array(  'required' => 'Пожалуйста укажите Email.',
-                    'valid_email' => 'Пожалуйста укажите корректный Email.'));
+                'valid_email' => 'Пожалуйста укажите корректный Email.'));
 //        Phone
-        $this->form_validation->set_rules('phone', 'Phone', 'trim|numeric',
-            array(  'numeric' => 'Телефоннный номер должен содержать только цифры.'));
+        $this->form_validation->set_rules('phone', 'Phone', 'trim|regex_match[/^\+([0-9]{3})[-]([0-9]{2})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})/]',
+            array(  'regex_match' => 'Телефоннный номер ненадлежащего формата.'));
 //        City
         $this->form_validation->set_rules('city', 'City', 'required',
             array(  'required' => 'Пожалуйста выберите город.'));
@@ -40,6 +55,9 @@ class Register extends CI_Controller
         }
         else
         {
+            $this->load->model('request');
+            $this->request->setUserData($this->input->post(null, true));
+
             $this->load->view('pages/register_success');
         }
 

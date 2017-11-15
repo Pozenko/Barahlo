@@ -5,7 +5,7 @@
         </div>
         <div class="my_center_container col-lg-8">
             <h3>Регистрация</h3>
-            <form class="form-horizontal" method="post" action="<?=base_url()?>register" name="registration">
+            <form class="form-horizontal" method="post" action="<?=base_url()?>register/validate" name="registration">
                 <div class="form-group <?php if(form_error('name')){echo 'has-error';} ?>">
                     <label for="inputName" class="col-sm-2 control-label">Имя</label>
                     <div class="col-sm-10">
@@ -37,7 +37,7 @@
                 <div class="form-group <?php if(form_error('phone')){echo 'has-error';} ?>">
                     <label for="inputPhone" class="col-sm-2 control-label">Телефон</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="inputPhone" name="phone" value="<?=set_value('phone'); ?>" placeholder="Телефон">
+                        <input type="text" class="form-control" id="inputPhone" name="phone" value="<?=set_value('phone'); ?>" placeholder="+375-29-111-11-11">
                         <?=form_error('phone','<span class="label label-danger">', '</span>'); ?>
                     </div>
                 </div>
@@ -46,9 +46,9 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="selectCity" name="city">
                             <option value="">Выберите город...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <?php foreach ($cities as $city){?>
+                                <option value="<?=$city['id_cities']?>"><?=$city['city']?></option>
+                            <?}?>
                         </select>
                         <?=form_error('city','<span class="label label-danger">', '</span>'); ?>
                     </div>

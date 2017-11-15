@@ -44,9 +44,9 @@
                         <label for="selectCity">Город</label>
                         <select class="form-control input-sm" id="selectCity">
                             <option value="">Выберите город...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <?php foreach ($cities as $city){?>
+                                <option value="<?=$city['id_cities']?>"><?=$city['city']?></option>
+                            <?}?>
                         </select>
                     </div>
                 </div>

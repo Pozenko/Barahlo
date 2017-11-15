@@ -1,7 +1,7 @@
 $(document).ready(function()
 {
     //phone input mask
-    $("#inputPhone").mask("+99999 999 99 99");
+    $("#inputPhone").mask("+999-99-999-99-99");
 
     // set Bootstrap classes default
     $.validator.setDefaults({
