@@ -6,13 +6,15 @@ class Register extends CI_Controller
     {
         parent::__construct();
         $this->load->library('form_validation');
+
+        $this->load->model('user');
+        $this->load->model('database');
     }
 
     public function index()
     {
-        $this->load->model('city');
         $data['title'] = 'Barahlo.by';
-        $data['cities'] = $this->city->getAllCity();
+        $data['cities'] = $this->database->selectAll('cities');
 
         $this->load->view('templates/header', $data);
         $this->load->view('pages/register_form', $data);
@@ -39,9 +41,10 @@ class Register extends CI_Controller
             array(  'required' => 'Пожалуйста повторите пароль.',
                 'matches' => 'Пароли не совпадают. Введите пароль еще раз.'));
 //        Email
-        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email',
+        $this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[login_user.email]',
             array(  'required' => 'Пожалуйста укажите Email.',
-                'valid_email' => 'Пожалуйста укажите корректный Email.'));
+                'valid_email' => 'Пожалуйста укажите корректный Email.',
+                'is_unique' => 'Пользователь с таким email уже существует.'));
 //        Phone
         $this->form_validation->set_rules('phone', 'Phone', 'trim|regex_match[/^\+([0-9]{3})[-]([0-9]{2})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})/]',
             array(  'regex_match' => 'Телефоннный номер ненадлежащего формата.'));
@@ -55,8 +58,8 @@ class Register extends CI_Controller
         }
         else
         {
-            $this->load->model('request');
-            $this->request->setUserData($this->input->post(null, true));
+            $this->user->setUserData($this->input->post(null, true), 'post');
+            $this->database->insertData($this->user);
 
             $this->load->view('pages/register_success');
         }
