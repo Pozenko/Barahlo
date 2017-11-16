@@ -3,7 +3,7 @@
 class Post extends CI_Model
 {
     private $userData = array();
-    private $advert = array();
+    private $advertData = array();
 
     public function getUserData(array $post)
     {
