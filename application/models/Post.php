@@ -8,9 +8,13 @@ class Post extends CI_Model
     public function getUserData(array $post)
     {
         $clearData = array_map(function($v) {return trim(strip_tags($v));}, $post);
+        $options = [
+            'salt' => HASH_SALT,
+        ];
 
         $this->userData['logUser']['email'] = $clearData['email'];
-        $this->userData['logUser']['password'] = password_hash($clearData['password1'], PASSWORD_DEFAULT);
+        $this->userData['logUser']['password'] = password_hash($post['password1'], PASSWORD_BCRYPT, $options);
+        var_dump($this->userData['logUser']['password'] );
 
         $this->userData['user']['id_loguser'] = null;
         $this->userData['user']['name'] = $clearData['name'];

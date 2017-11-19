@@ -95,7 +95,28 @@ $(document).ready(function()
         // Make sure the form is submitted to the destination defined
         // in the "action" attribute of the form when valid
         submitHandler: function(form) {
-            form.submit();
+            // form.submit();
+            $.ajax({
+                type: "POST",
+                url: "signin",
+                dataType: 'json',
+                data: $(form).serialize(),
+                success: function (result) {
+                    // alert(result.email);
+                    console.log(result);
+                    if( typeof result.error  === "undefined")
+                    {
+                        $('#enterBtn').hide();
+                        $('#userBtn').html(result.name);
+                        $('#userMenu').show();
+                    }
+                    else
+                    {
+                        alert(result.error);
+                    }
+                }
+            });
+            return false;
         }
     });
 

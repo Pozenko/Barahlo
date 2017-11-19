@@ -40,11 +40,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
-                <button class="btn my_btn " data-toggle="modal" data-target="#enterModal">вход</button>
+                <button id="enterBtn" class="btn my_btn " data-toggle="modal" data-target="#enterModal">вход</button>
 <!--                login user menu (display: none)-->
-                <div class="dropdown my_display_none">
-                    <button class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
-                        User Name
+                <div id="userMenu" class="dropdown" hidden>
+                    <button id="userBtn" class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right my_user_dropdown">
@@ -93,7 +92,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
                 <div class="modal-body">
 <!--                    login form-->
-                    <form class="my_modal_form" name="signin" method="post" action="">
+                    <form class="my_modal_form" name="signin" method="post" action="<?=base_url()?>signin">
                         <div class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon my_btn" id="basic-addon1">
