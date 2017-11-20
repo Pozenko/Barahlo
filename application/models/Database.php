@@ -2,23 +2,18 @@
 
 class Database extends CI_Model
 {
-    private $userTbl = 'user';
-    private $logUserTbl = 'login_user';
 
-
-    public function insertData($object)
+    public function insertData(array $data, $model_name)
     {
-        if($object instanceof User)
-        {
-            var_dump($object->getLoginUser());
-            $this->db->trans_start();
-            $this->db->insert($this->logUserTbl, $object->getLoginUser());
-            $object->setLogUserId($this->db->insert_id());
-            $this->db->insert($this->userTbl, $object->getUser());
-            $this->db->trans_complete();
-        }
+        $this->load->model($model_name, 'model');
+        $this->model->setData($data);
+        $this->model->insertData();
     }
-
+    public function selectWhere($where, $model_name)
+    {
+        $this->load->model($model_name, 'model');
+        return  $this->model->selectData($where);
+    }
     public function selectAll($table)
     {
         $query = $this->db->get(strtolower($table));
@@ -27,36 +22,25 @@ class Database extends CI_Model
 
     /**
      * @param $table - table name
-     * @param array $what - simple array
+     * @param array $what - simple array fields
      * @param array $where - array key => value
      * @return mixed - array
      */
-    public function selectWhere($table, array $what, array $where)
-    {
-        $params;
-        for($i = 0; $i < count($what); $i++)
-        {
-            $params .= $what[$i];
-            if($i != (count($what) - 1))
-            {
-                $params .= ", ";
-            }
-        }
-        $this->db->select($params);
-        $query = $this->db->get_where($table, $where);
-
-        return $query->result_array();
-    }
-
-    public function selectUserData($email)
-    {
-        $this->db->select('login_user.email, login_user.password, user.name, user.id_user');
-        $this->db->from('login_user');
-        $this->db->join('user', 'login_user.id_loguser = user.id_loguser');
-        $this->db->where('login_user.email', trim(strip_tags($email)));
-        $query = $this->db->get();
-
-        return $query->result_array();
-    }
+//    public function selectWhere($table, array $what, array $where)
+//    {
+//        $params;
+//        for($i = 0; $i < count($what); $i++)
+//        {
+//            $params .= $what[$i];
+//            if($i != (count($what) - 1))
+//            {
+//                $params .= ", ";
+//            }
+//        }
+//        $this->db->select($params);
+//        $query = $this->db->get_where($table, $where);
+//
+//        return $query->result_array();
+//    }
 
 }

@@ -7,7 +7,6 @@ class Register extends CI_Controller
         parent::__construct();
         $this->load->library('form_validation');
 
-        $this->load->model('user');
         $this->load->model('database');
     }
 
@@ -58,8 +57,7 @@ class Register extends CI_Controller
         }
         else
         {
-            $this->user->setUserData($this->input->post(null, true), 'post');
-            $this->database->insertData($this->user);
+            $this->database->insertData($this->input->post(null, true), 'user');
 
             $this->load->view('pages/register_success');
         }

@@ -19,6 +19,17 @@
                     </div>
                 </div>
                 <div class="form-group">
+                    <label for="selectCategories" class="col-sm-2 control-label">Катерогия</label>
+                    <div class="col-sm-10">
+                        <select class="form-control input-sm" id="selectCategories" name="id_cat">
+                            <option value="">Выберите категорию...</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
                     <label for="selectSelleOption" class="col-sm-2 control-label">Тип сделки</label>
                     <div class="col-sm-3">
                         <select class="form-control" id="selectSelleOption" name="sellingOptions">

@@ -104,15 +104,26 @@ $(document).ready(function()
                 success: function (result) {
                     // alert(result.email);
                     console.log(result);
-                    if( typeof result.error  === "undefined")
+                    if( typeof result.error  === "undefined" && typeof result.passError === "undefined")
                     {
                         $('#enterBtn').hide();
                         $('#userBtn').html(result.name);
+                        $('#userBtn').append('  <span class="caret"></span>');
                         $('#userMenu').show();
+                        $('#enterModal').modal('hide');
                     }
                     else
                     {
-                        alert(result.error);
+                        if(result.passError)
+                        {
+                            $('#passwordModalGroup').addClass('has_error');
+                            $('#passwordInputError').html(result.passError).show();
+                        }
+                        else
+                        {
+                            $('#emailModalGroup').addClass('has_error');
+                            $('#emailInputError').html(result.error).show();
+                        }
                     }
                 }
             });

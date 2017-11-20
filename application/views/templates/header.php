@@ -40,10 +40,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 </div>
             </div>
             <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 text-right">
-                <button id="enterBtn" class="btn my_btn " data-toggle="modal" data-target="#enterModal">вход</button>
+                <button id="enterBtn" class="btn my_btn " data-toggle="modal" data-target="#enterModal" <?php if(isset($_SESSION['username'])){echo 'style="display:none"';}?>>вход</button>
 <!--                login user menu (display: none)-->
-                <div id="userMenu" class="dropdown" hidden>
+                <div id="userMenu" class="dropdown" <?php if(!isset($_SESSION['username'])){echo 'hidden';}?>>
                     <button id="userBtn" class="btn my_btn dropdown-toggle" type="button" data-toggle="dropdown">
+                        <?=$_SESSION['username']?>
                         <span class="caret"></span>
                     </button>
                     <ul class="dropdown-menu dropdown-menu-right my_user_dropdown">
@@ -62,7 +63,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-plus my_fa" aria-hidden="true"></i>
+                            <a href="<?=base_url()?>create"><i class="fa fa-plus my_fa" aria-hidden="true"></i>
                                 Добавить объявление
                             </a>
                         </li>
@@ -73,7 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         </li>
                         <li role="separator" class="divider my_divider"></li>
                         <li>
-                            <a href="#"><i class="fa fa-sign-out my_fa" aria-hidden="true"></i>
+                            <a href="<?=base_url()?>signin/out"><i class="fa fa-sign-out my_fa" aria-hidden="true"></i>
                                 Выход
                             </a>
                         </li>
@@ -93,21 +94,23 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="modal-body">
 <!--                    login form-->
                     <form class="my_modal_form" name="signin" method="post" action="<?=base_url()?>signin">
-                        <div class="form-group">
+                        <div id="emailModalGroup" class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-envelope-o" aria-hidden="true"></i>
                                 </span>
                                 <input type="text" name="email" class="form-control my_modal_input" placeholder="E-mail" aria-describedby="basic-addon1" maxlength="25">
                             </div>
+                            <span id="emailInputError" class="label label-danger my_display_none">
                         </div>
-                        <div class="form-group">
+                        <div id="passwordModalGroup" class="form-group">
                             <div class="input-group">
                                 <span class="input-group-addon my_btn" id="basic-addon1">
                                     <i class="fa fa-key" aria-hidden="true"></i>
                                 </span>
                                 <input type="password" name="password" class="form-control my_modal_input" placeholder="Пароль" aria-describedby="basic-addon1" maxlength="16">
                             </div>
+                            <span id="passwordInputError" class="label label-danger my_display_none" hidden>
                         </div>
                         <a href="#">Забыли пароль?</a><br><br>
                         <button type="submit" class="btn my_btn">Войти</button>
