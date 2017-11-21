@@ -17,9 +17,10 @@
                         <label for="selectCategories">Катерогии</label>
                         <select class="form-control input-sm" id="selectCategories">
                             <option value="">Выберите категорию...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <option value="">Выберите город...</option>
+                            <?php foreach ($categories as $category){?>
+                                <option value="<?=$category['id_cat']?>"><?=$category['name']?></option>
+                            <?}?>
                         </select>
                     </div>
                     <div class="form-group col-lg-4 col-md-4">

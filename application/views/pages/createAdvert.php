@@ -5,7 +5,7 @@
         </div>
         <div class="my_center_container col-lg-8">
             <h3>Добавить объявление</h3>
-            <form class="form-horizontal" method="post" action="<?=base_url()?>create/validate" name="create">
+            <form class="form-horizontal" enctype="multipart/form-data" method="post" action="<?=base_url()?>create/validate" name="create">
                 <div class="form-group <?php if(form_error('title')){echo 'has-error';} ?>">
                     <label for="inputTitle" class="col-sm-2 control-label">Заголовок</label>
                     <div class="col-sm-10">
@@ -25,9 +25,9 @@
                     <div class="col-sm-10">
                         <select class="form-control" id="selectCategories" name="id_cat">
                             <option value="">Выберите категорию...</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
+                            <?php foreach ($categories as $category){?>
+                                <option value="<?=$category['id_cat']?>"><?=$category['name']?></option>
+                            <?}?>
                         </select>
                         <?=form_error('id_cat','<span class="label label-danger">', '</span>'); ?>
                     </div>
@@ -56,7 +56,7 @@
                 <div class="form-group">
                     <label for="inputFile" class="col-sm-2 control-label">Фото</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control-file" id="inputFile" aria-describedby="fileHelp" accept="image/jpeg, image/png"  multiple>
+                        <input type="file" class="form-control-file" id="inputFile" name="userFiles[]" aria-describedby="fileHelp" accept="image/jpeg, image/png"  multiple>
                         <small id="fileHelp" class="form-text text-muted">Загрузка фотографий в формате jpeg/png</small>
                     </div>
                 </div>

@@ -12,6 +12,7 @@ class Home extends CI_Controller
     {
         $data['title'] = 'Barahlo.by';
         $data['cities'] = $this->database->selectAll('cities');
+        $data['categories'] = $this->database->selectAll('categories');
 
         $this->load->view('templates/header', $data);
         $this->load->view('pages/home', $data);

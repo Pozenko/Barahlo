@@ -98,7 +98,7 @@ $(document).ready(function()
             // form.submit();
             $.ajax({
                 type: "POST",
-                url: "signin",
+                url: "signin/ajax",
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (result) {
