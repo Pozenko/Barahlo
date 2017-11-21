@@ -102,7 +102,7 @@ $(document).ready(function()
                 dataType: 'json',
                 data: $(form).serialize(),
                 success: function (result) {
-                    // alert(result.email);
+
                     console.log(result);
                     if( typeof result.error  === "undefined" && typeof result.passError === "undefined")
                     {
@@ -185,6 +185,9 @@ $(document).ready(function()
             },
             sellingOptions:{
                 required: true
+            },
+            id_cat:{
+                required: true
             }
         },
         // Specify validation error messages
@@ -197,6 +200,9 @@ $(document).ready(function()
             },
             sellingOptions:{
                 required: "Пожалуйста выберите тип сделки."
+            },
+            id_cat:{
+                required: "Пожалуйста выберите категорию."
             }
         },
         // Make sure the form is submitted to the destination defined
