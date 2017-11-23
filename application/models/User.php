@@ -9,12 +9,12 @@ class User extends CI_Model
     public function setData(array $data)
     {
         $clearData = array_map(function($v) {return trim(strip_tags($v));}, $data);
-        $options = [
-            'salt' => HASH_SALT,
-        ];
+//        $options = [
+//            'salt' => HASH_SALT,
+//        ];
 
         $this->userData['logUser']['email'] = $clearData['email'];
-        $this->userData['logUser']['password'] = password_hash($data['password1'], PASSWORD_BCRYPT, $options);
+        $this->userData['logUser']['password'] = password_hash($data['password1'], PASSWORD_BCRYPT);
         $this->userData['user']['id_loguser'] = null;
         $this->userData['user']['name'] = $clearData['name'];
         if($clearData['phone']){$this->userData['user']['phone'] = $clearData['phone'];}

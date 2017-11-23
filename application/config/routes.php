@@ -53,4 +53,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+//my routs
 $route['signin'] = 'signin';
+$route['(:any)/signin'] = 'signin';
+$route['ajax'] = 'signin/ajax';
+$route['(:any)/ajax'] = 'signin/ajax';
+

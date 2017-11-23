@@ -3,12 +3,15 @@
 class Database extends CI_Model
 {
 
-    public function insertData(array $data, $model_name)
+    public function insertData($model_name, array $data)
     {
         $this->load->model($model_name, 'model');
+
         $this->model->setData($data);
+
         $this->model->insertData();
     }
+
     public function selectWhere($where, $model_name)
     {
         $this->load->model($model_name, 'model');

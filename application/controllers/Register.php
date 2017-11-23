@@ -57,7 +57,7 @@ class Register extends CI_Controller
         }
         else
         {
-            $this->database->insertData($this->input->post(null, true), 'user');
+            $this->database->insertData('user', $this->input->post(null, true));
 
             $this->load->view('pages/register_success');
         }

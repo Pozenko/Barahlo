@@ -59,7 +59,9 @@
             </form>
 <!--            adverts list-->
             <div class="row">
+                <?php if(isset($results)){ ?>
                 <ul class="list-unstyled col-lg-12">
+                    <?php foreach ($results as $data){ ?>
                     <li>
                         <div class="row">
                             <div class="panel panel-default my_panel">
@@ -68,52 +70,59 @@
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4" style="max-width: 260px">
                                             <div class="my_img_container">
                                                 <a href="" >
-                                                    <img src="<?=imgs_url();?>testIMG.jpeg" alt="">
+                                                    <img src="<?=small_img_url();?><?php if($data->small){echo $data->small;} ?>" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-lg-7 col-md-6 col-sm-6 col-xs-5">
                                             <a href="" class="my_advert_title">
-                                                <h4>Title advertg fdgf  dhhdfghfddfgf dfdfhgfdhdfg dhdfh df df hdfh df dh d</h4>
+                                                <h4><?=$data->title?></h4>
                                             </a>
                                         </div>
                                         <div class="col-lg-2 col-md-3 col-sm-3 col-xs-3 text-right">
-                                            <h4 class="my_price">2300 р.</h4>
+                                            <h4 class="my_price"><?=$data->price?> р.</h4>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="panel-footer">
                                     <div class="row">
                                         <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4">
-                                            <small>12 сент 17</small>
+                                            <small><?=$data->place_date?></small>
                                         </div>
                                         <div class="col-lg-3 col-md-3 col-sm-4 hidden-xs">
                                             <small class="text-muted">Категория:</small>
-                                            <small>Название категории</small>
+                                            <small><?=$data->name?></small>
                                         </div>
                                         <div class="col-lg-2 col-md-2 col-sm-3 col-xs-6">
                                             <small class="text-muted">Тип сделки:</small>
-                                            <small>Продажа</small>
+                                            <small><?=$data->selling_options?></small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </li>
+                    <?php }?>
                 </ul>
+                <?php } else{?>
+                    <div>Объявлений пока нет(</div>
+                <?php }?>
             </div>
 <!--            pagination-->
-            <div class="row text-center">
-                <div class="col-lg-12">
-                    <ul class="pagination">
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">4</a></li>
-                        <li><a href="#">5</a></li>
-                    </ul>
-                </div>
-            </div>
+            <?php if (isset($links)) { ?>
+            <?php echo $links ?>
+            <?php } ?>
+<!--            <div class="row text-center">-->
+<!--                <div class="col-lg-12">-->
+<!--                    <ul class="pagination">-->
+<!--                        <li><a href="#">1</a></li>-->
+<!--                        <li><a href="#">2</a></li>-->
+<!--                        <li><a href="#">3</a></li>-->
+<!--                        <li><a href="#">4</a></li>-->
+<!--                        <li><a href="#">5</a></li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--            </div>-->
         </div>
     </div>
 </div>

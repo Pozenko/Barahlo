@@ -85,4 +85,4 @@ defined('EXIT__AUTO_MIN')      OR define('EXIT__AUTO_MIN', 9); // lowest automat
 defined('EXIT__AUTO_MAX')      OR define('EXIT__AUTO_MAX', 125); // highest automatically-assigned error code
 
 //my constants
-define('HASH_SALT','dn3281y1hdnh18o2476128ehd6');
+//define('HASH_SALT','dn3281y1hdnh18o2476128ehd6');
