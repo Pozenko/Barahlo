@@ -69,13 +69,13 @@
                                     <div class="row">
                                         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4" style="max-width: 260px">
                                             <div class="my_img_container">
-                                                <a href="" >
+                                                <a href="<?=base_url()?>ad?id=<?=$data->id_advert?>" >
                                                     <img src="<?=small_img_url();?><?php if($data->small){echo $data->small;} ?>" alt="">
                                                 </a>
                                             </div>
                                         </div>
                                         <div class="col-lg-7 col-md-6 col-sm-6 col-xs-5">
-                                            <a href="" class="my_advert_title">
+                                            <a href="<?=base_url()?>ad?id=<?=$data->id_advert?>" class="my_advert_title">
                                                 <h4><?=$data->title?></h4>
                                             </a>
                                         </div>
@@ -102,18 +102,19 @@
                             </div>
                         </div>
                     </li>
+                        <br>
                     <?php }?>
                 </ul>
                 <?php } else{?>
                     <div>Объявлений пока нет(</div>
                 <?php }?>
             </div>
-<!--            pagination-->
-            <?php if (isset($links)) { ?>
-            <?php echo $links ?>
-            <?php } ?>
-<!--            <div class="row text-center">-->
-<!--                <div class="col-lg-12">-->
+            <div class="row text-center">
+                <div class="col-lg-12">
+                    <!--pagination-->
+                    <?php if (isset($links)) { ?>
+                        <?php echo $links ?>
+                    <?php } ?>
 <!--                    <ul class="pagination">-->
 <!--                        <li><a href="#">1</a></li>-->
 <!--                        <li><a href="#">2</a></li>-->
@@ -121,8 +122,8 @@
 <!--                        <li><a href="#">4</a></li>-->
 <!--                        <li><a href="#">5</a></li>-->
 <!--                    </ul>-->
-<!--                </div>-->
-<!--            </div>-->
+                </div>
+            </div>
         </div>
     </div>
 </div>

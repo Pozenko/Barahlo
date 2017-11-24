@@ -38,7 +38,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h4>Title</h4>
+                            <h4><?=$advert->title?></h4>
                             <span>Дата размещения 12.02.2017</span>
                         </div>
                     </div>

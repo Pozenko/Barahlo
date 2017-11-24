@@ -21,25 +21,24 @@ class Home extends CI_Controller
         $this->load->view('templates/header', $data);
 
         $this->load->model('advert');
-//        $data = $this->advert->getCurrentPageRecords(3, 0);
-//        var_dump($data);
         // init params
         $params = array();
-        $limit_per_page = 1;
         $start_index = ($this->uri->segment(3)) ? $this->uri->segment(3) : 0;
         $total_records = $this->advert->getCount();
+
+        // load config file
+        $this->config->load('pagination', TRUE);
+        $settings = $this->config->item('pagination');
+        $settings['total_rows'] = $total_records;
+        $settings['base_url'] = base_url() . 'home/index';
 
         if ($total_records > 0)
         {
             // get current page records
-            $params["results"] = $this->advert->getCurrentPageRecords($limit_per_page, $start_index);
+            $params["results"] = $this->advert->getCurrentPageRecords($settings['per_page'], $start_index);
 
-            $config['base_url'] = base_url() . 'home/index';
-            $config['total_rows'] = $total_records;
-            $config['per_page'] = $limit_per_page;
-            $config["uri_segment"] = 3;
-
-            $this->pagination->initialize($config);
+            // use the settings to initialize the library
+            $this->pagination->initialize($settings);
 
             // build paging links
             $params["links"] = $this->pagination->create_links();
