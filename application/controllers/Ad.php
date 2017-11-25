@@ -18,9 +18,9 @@ class Ad extends CI_Controller
             if($tempData = $this->database->selectWhere($id_adv, 'advert'))
             {
                 $data['advert'] = $tempData[0];
-                if(isset($tempData[1]))
+                if(isset($tempData['img']))
                 {
-                    $data['image'] = $tempData[1];
+                    $data['image'] = $tempData['img'];
                 }
                 $this->load->view('templates/header', $data);
                 $this->load->view('pages/advert', $data);

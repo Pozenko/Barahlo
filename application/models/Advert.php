@@ -63,13 +63,15 @@ class Advert extends CI_Model
         $this->db->where('id_advert', $id_adv);
 
         $query = $this->db->get();
-        foreach ($query->result() as $row)
+        if($query->num_rows() > 0)
         {
-            $data[] = $row;
+            foreach ($query->result() as $row)
+            {
+                $data['img'][] = $row;
+            }
         }
 
         return $data;
-
     }
 
     //functions for pagination
