@@ -14,6 +14,16 @@ class Home extends CI_Controller
 
     public function index()
     {
+        //set session from filters
+        var_dump($_POST);
+//        if(isset($_POST['id_cat']))
+//            $_SESSION['filter']['id_cat'] = intval($this->input->post('id_cat', true));
+//        if(isset($_POST['id_sabcat']))
+//            $_SESSION['filter']['id_subcat'] = intval($this->input->post('id_subcat', true));
+//        if(isset($_POST['selling_options']))
+//            $_SESSION['filter']['selling_options'] = $this->input->post('selling_options', true);
+
+
         $data['title'] = 'Barahlo.by';
         $data['cities'] = $this->database->selectAll('cities');
         $data['categories'] = $this->database->selectAll('categories');

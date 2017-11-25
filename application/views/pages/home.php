@@ -11,13 +11,12 @@
                 </div>
             </div>
 <!--            categories form-->
-            <form name="categories" action="" id="filter_form" hidden>
+            <form name="categories" method="post" action="<?=base_url()?>home" id="filter_form" hidden>
                 <div class="row my_cat_row">
                     <div class="form-group col-lg-4 col-md-4">
                         <label for="selectCategories">Катерогии</label>
-                        <select class="form-control input-sm" id="selectCategories">
+                        <select class="form-control input-sm" id="selectCategories" name="filter[id_cat]" >
                             <option value="">Выберите категорию...</option>
-                            <option value="">Выберите город...</option>
                             <?php foreach ($categories as $category){?>
                                 <option value="<?=$category['id_cat']?>"><?=$category['name']?></option>
                             <?}?>
@@ -25,7 +24,7 @@
                     </div>
                     <div class="form-group col-lg-4 col-md-4">
                         <label for="selectSubCategories">Подкатегории</label>
-                        <select class="form-control input-sm" id="selectSubCategories">
+                        <select class="form-control input-sm" id="selectSubCategories" name="filter[id_subcat]" >
                             <option value="">Выберите подкатегорию...</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -34,7 +33,7 @@
                     </div>
                     <div class="form-group col-lg-2 col-md-2">
                         <label for="selectSellingOption">Тип сделки</label>
-                        <select class="form-control input-sm" id="selectSellingOption">
+                        <select class="form-control input-sm" id="selectSellingOption" name="filter[selling_options]" >
                             <option value="">Тип...</option>
                             <option value="1">Покупка</option>
                             <option value="2">Продажа</option>
@@ -43,7 +42,7 @@
                     </div>
                     <div class="form-group col-lg-2 col-md-2">
                         <label for="selectCity">Город</label>
-                        <select class="form-control input-sm" id="selectCity">
+                        <select class="form-control input-sm" id="selectCity" name="filter[city]" >
                             <option value="">Выберите город...</option>
                             <?php foreach ($cities as $city){?>
                                 <option value="<?=$city['id_cities']?>"><?=$city['city']?></option>
@@ -52,8 +51,11 @@
                     </div>
                 </div>
                 <div class="row text-left">
-                    <div class="form-group col-lg-12">
+                    <div class="form-group col-lg-2">
                         <button type="submit" class="btn btn-default">Показать объявления</button>
+                    </div>
+                    <div class="form-group col-lg-2">
+                        <a href="#" class="btn btn-default">Сбросить</a>
                     </div>
                 </div>
             </form>
