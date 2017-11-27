@@ -88,8 +88,8 @@ class Account extends CI_Controller
         $this->load->view('templates/footer');
     }
 
-    public function deleteData()
+    public function delete()
     {
-
+        $this->database->deleteData('user');
     }
 }

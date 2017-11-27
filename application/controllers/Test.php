@@ -17,27 +17,33 @@ class Test extends CI_Controller
         $result = $query->result_array();
         var_dump($result);
 
+        $this->db->select('large');
+        $this->db->from('images');
+        $this->db->where($result);
+        $query = $this->db->get();
+        $images =  $query->result_array();
+        var_dump($images);
 //        for($i = 0; $i < count($result);$i++)
 //        {
 //            echo $result[$i]['id_advert'];
 //        }
-        $images = array();
-        foreach ($result as $res)
-        {
-            $this->db->select('large');
-            $this->db->from('images');
-            $this->db->where('id_advert', $res['id_advert']);
-            $query = $this->db->get();
-            $images[] =  $query->result_array();
-        }
-        foreach($images as $image)
-        {
-            foreach ($image as $name)
-            {
-                $images2[] = $name['large'];
-            }
-        }
-
-        var_dump($images2);
+//        $images = array();
+//        foreach ($result as $res)
+//        {
+//            $this->db->select('large');
+//            $this->db->from('images');
+//            $this->db->where('id_advert', $res['id_advert']);
+//            $query = $this->db->get();
+//            $images[] =  $query->result_array();
+//        }
+//        foreach($images as $image)
+//        {
+//            foreach ($image as $name)
+//            {
+//                $images2[] = $name['large'];
+//            }
+//        }
+//
+//        var_dump($images2);
     }
 }

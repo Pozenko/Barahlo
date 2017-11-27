@@ -109,6 +109,7 @@
                 <br>
                 <div class="form-group text-right">
                     <div class="col-sm-offset-2 col-sm-10">
+                        <a href="<?=base_url()?>account/delete" class="btn btn-danger">Удалить?</a>
                         <button type="submit" class="btn my_btn">Сохранить</button>
                     </div>
                 </div>

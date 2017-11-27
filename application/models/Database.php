@@ -17,17 +17,24 @@ class Database extends CI_Model
         $this->load->model($model_name, 'model');
         return  $this->model->selectData($where);
     }
+
     public function selectAll($table)
     {
         $query = $this->db->get(strtolower($table));
         return $query->result_array();
     }
+
     public function updateData($model_name, array $updateData)
     {
         $this->load->model($model_name, 'model');
         $this->model->updateData($updateData);
     }
 
+    public function deleteData($model_name)
+    {
+        $this->load->model($model_name, 'model');
+        $this->model->deleteData();
+    }
     /**
      * @param $table - table name
      * @param array $what - simple array fields

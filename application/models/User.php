@@ -80,10 +80,10 @@ class User extends CI_Model
         $query = $this->db->get();
         $result = $query->result_array();
 
-        //delete from user adn log_user tables
-        $tables = array($this->logUserTable, $this->logUserTable);
-        $this->db->where('id_loguser', $_SESSION['id_user']);
-        $this->db->delete($tables);
+        //delete advert images
+        $this->load->model('images');
+        $this->images->deleteImages($result);
+
         // delete advert
         if(isset($result))
         {
@@ -93,9 +93,12 @@ class User extends CI_Model
                 $this->db->delete('advert');
             }
         }
-        //select advert images
-
-
+        //delete from user
+        $this->db->where('id_user', $_SESSION['id_user']);
+        $this->db->delete($this->userTable);
+        //delete from loguser
+        $this->db->where('id_loguser', $_SESSION['id_user']);
+        $this->db->delete($this->logUserTable);
 
     }
 
