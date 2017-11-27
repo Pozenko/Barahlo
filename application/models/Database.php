@@ -22,6 +22,11 @@ class Database extends CI_Model
         $query = $this->db->get(strtolower($table));
         return $query->result_array();
     }
+    public function updateData($model_name, array $updateData)
+    {
+        $this->load->model($model_name, 'model');
+        $this->model->updateData($updateData);
+    }
 
     /**
      * @param $table - table name

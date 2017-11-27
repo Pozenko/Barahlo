@@ -131,7 +131,7 @@
                 <div class="panel-body text-left">
                     <div class="row">
                         <div class="col-lg-12">
-                            <h4>Имя</h4>
+                            <h4><?=$advert->name?></h4>
                             <small>Зарегестрирован: <?=$advert->reg_date?></small>
                         </div>
                     </div>
