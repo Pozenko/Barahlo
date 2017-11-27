@@ -13,7 +13,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="inputName" name="update[name]" maxlength="25"
                                    value="<?=isset($user->name) ? $user->name : set_value('update[name]')?>"
-                                   <?php if(!form_error('update[name]')){echo 'disabled';} ?> >
+                                   <?php if(!isset($_POST['update']['name'])){echo 'disabled';} ?> >
                             <span class="input-group-btn">
                                 <button id="accNameBtn" class="btn btn-default" type="button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -30,7 +30,7 @@
                         <div class="input-group">
                             <input type="email" class="form-control" id="inputEmail" name="update[email]" maxlength="25"
                                    value="<?=isset($user->email) ? $user->email : set_value('update[email]')?>"
-                                   <?php if(!form_error('update[email]')){echo 'disabled';} ?>>
+                                   <?php if(!isset($_POST['update']['email'])){echo 'disabled';} ?>>
                             <span class="input-group-btn">
                                 <button id="accEmailBtn" class="btn btn-default" type="button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -46,7 +46,7 @@
                     <div class="col-sm-10">
                         <div class="input-group">
                             <input type="password" class="form-control" id="inputPassword" name="update[password1]" maxlength="45"
-                                   value="<?=set_value('update[password1]')?>" <?php if(!form_error('update[password1]')){echo 'disabled';} ?>>
+                                   value="<?=set_value('update[password1]')?>" <?php if(!isset($_POST['update']['password1'])){echo 'disabled';} ?>>
                             <span class="input-group-btn">
                                 <button id="accPasswordBtn" class="btn btn-default" type="button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
@@ -61,7 +61,7 @@
                     <label for="inputPassword2" class="col-sm-2 control-label"></label>
                     <div class="col-sm-10">
                         <input type="password" class="form-control" id="inputPassword2" name="update[password2]" maxlength="45"
-                               value="<?=set_value('update[password2]')?>" <?php if(!form_error('update[password2]')){echo 'disabled';} ?>>
+                               value="<?=set_value('update[password2]')?>" <?php if(!isset($_POST['update']['password2'])){echo 'disabled';} ?>>
                         <?=form_error('update[password2]','<span class="label label-danger">', '</span>'); ?>
                     </div>
                 </div>
@@ -72,7 +72,7 @@
                         <div class="input-group">
                             <input type="text" class="form-control" id="inputPhone" name="update[phone]"
                                    value="<?=isset($user->phone) ? $user->phone : set_value('update[phone]')?>"
-                                   <?php if(!form_error('update[phone]')){echo 'disabled';} ?>>
+                                   <?php if(!isset($_POST['update']['phone'])){echo 'disabled';} ?>>
                             <span class="input-group-btn">
                                 <button id="accPhoneBtn" class="btn btn-default" type="button">
                                     <i class="fa fa-pencil" aria-hidden="true"></i>
