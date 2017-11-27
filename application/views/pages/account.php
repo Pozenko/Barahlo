@@ -83,14 +83,18 @@
                     </div>
                 </div>
 <!--                city-->
-                <div class="form-group <?php if(form_error('update[city]')){echo 'has-error';} ?>">
+                <div class="form-group <?php if(form_error('update[id_cities]')){echo 'has-error';} ?>">
                     <label for="selectCity" class="col-sm-2 control-label">Город</label>
                     <div class="col-sm-10">
                         <div class="input-group">
-                            <select class="form-control" id="selectCity" name="update[city]" disabled>
+                            <select class="form-control" id="selectCity" name="update[id_cities]" <?php if(!isset($_POST['update']['id_cities'])){echo 'disabled';} ?>>
                                 <?php foreach ($cities as $city){?>
-                                    <option <?php if($city['id_cities'] == $user->id_cities){echo 'selected';}?> value="<?=$city['id_cities']?>"><?=$city['city']?></option>
-                                <?}?>
+                                    <?php if(isset($user)){ ?>
+                                        <option <?php if($city['id_cities'] == $user->id_cities){echo 'selected';}?> value="<?=$city['id_cities']?>"><?=$city['city']?></option>
+                                    <?php } else{ ?>
+                                        <option <?php if($city['id_cities'] == $_POST['update']['id_cities']){echo 'selected';}?> value="<?=$city['id_cities']?>"><?=$city['city']?></option>
+                                    <?php }?>
+                                <?php }?>
                             </select>
                             <span class="input-group-btn">
                                 <button id="accCityBtn" class="btn btn-default" type="button">
@@ -98,7 +102,7 @@
                                 </button>
                             </span>
                         </div>
-                        <?=form_error('update[city]','<span class="label label-danger">', '</span>'); ?>
+                        <?=form_error('update[id_cities]','<span class="label label-danger">', '</span>'); ?>
                     </div>
                 </div>
                 <br>

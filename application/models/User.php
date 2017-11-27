@@ -41,9 +41,62 @@ class User extends CI_Model
 
     public function updateData(array $updateData)
     {
-        $this->db->set($updateData);
+        $updateLogUserData = array();
+//        prepare data to update
+        if(isset($updateData['email']))
+        {
+            $updateLogUserData['email'] = $updateData['email'];
+            unset($updateData['email']);
+        }
+        if(isset($updateData['password1']))
+        {
+            $updateLogUserData['password'] = password_hash($updateData['password1'], PASSWORD_BCRYPT);
+            unset($updateData['password1']);
+            unset($updateData['password2']);
+        }
+        //update user table
+        if(!empty($updateData))
+        {
+            $this->db->set($updateData);
+            $this->db->where('id_user', $_SESSION['id_user']);
+            $this->db->update($this->userTable);
+        }
+//        update log_user table
+        if(!empty($updateLogUserData))
+        {
+            $this->db->set($updateLogUserData);
+            $this->db->where('id_loguser', $_SESSION['id_user']);
+            $this->db->update($this->logUserTable);
+        }
+
+    }
+
+    public function deleteData()
+    {
+        //select user adverts
+        $this->db->select('id_advert');
+        $this->db->from('advert');
         $this->db->where('id_user', $_SESSION['id_user']);
-        $this->db->update($this->userTable);
+        $query = $this->db->get();
+        $result = $query->result_array();
+
+        //delete from user adn log_user tables
+        $tables = array($this->logUserTable, $this->logUserTable);
+        $this->db->where('id_loguser', $_SESSION['id_user']);
+        $this->db->delete($tables);
+        // delete advert
+        if(isset($result))
+        {
+            for($i = 0; $i < count($result);$i++)
+            {
+                $this->db->where('id_advert', $result[$i]['id_advert']);
+                $this->db->delete('advert');
+            }
+        }
+        //select advert images
+
+
+
     }
 
     public function selectAccountData()

@@ -2,7 +2,7 @@
 
 class Account extends CI_Controller
 {
-    
+
     public function __construct()
     {
         parent::__construct();
@@ -21,18 +21,20 @@ class Account extends CI_Controller
             else
                 redirect(base_url());
         }
-        $this->data['title'] = 'Barahlo.by';
-        $this->data['user'] = $this->user->selectAccountData();
-        $this->data['cities'] = $this->database->selectAll('cities');
+        $data['title'] = 'Barahlo.by';
+        $data['user'] = $this->user->selectAccountData();
+        $data['cities'] = $this->database->selectAll('cities');
 
-        $this->load->view('templates/header', $this->data);
-        $this->load->view('pages/account', $this->data);
+        $this->load->view('templates/header', $data);
+        $this->load->view('pages/account', $data);
         $this->load->view('templates/footer');
     }
 
     public function update()
     {
-        $this->load->view('templates/header', $this->data);
+        $data['title'] = 'Update';
+        $data['cities'] = $this->database->selectAll('cities');
+        $this->load->view('templates/header', $data);
         //        Name
         if(isset($_POST['update']['name']))
             $this->form_validation->set_rules('update[name]', 'Username', 'trim|required|min_length[2]|max_length[25]|alpha_numeric',
@@ -59,21 +61,22 @@ class Account extends CI_Controller
             $this->form_validation->set_rules('update[phone]', 'Phone', 'trim|regex_match[/^\+([0-9]{3})[-]([0-9]{2})[-]([0-9]{3})[-]([0-9]{2})[-]([0-9]{2})/]',
                 array(  'regex_match' => 'Телефоннный номер ненадлежащего формата.'));
 //        City
-        if(isset($_POST['update']['city']))
-            $this->form_validation->set_rules('update[city]', 'City', 'required',
+        if(isset($_POST['update']['id_cities']))
+            $this->form_validation->set_rules('update[id_cities]', 'City', 'required',
                 array(  'required' => 'Пожалуйста выберите город.'));
 
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('pages/account', $this->data);
+            $this->load->view('pages/account', $data);
         }
         else
         {
             if(isset($_POST['update']))
             {
                 $updateData = $this->input->post('update', true);
-                var_dump($updateData);
-//                $this->database->updateData('user', $updateData);
+//                var_dump($updateData);
+                $this->database->updateData('user', $updateData);
+                session_destroy();
                 $this->load->view('pages/account_update_success');
             }
             else
@@ -83,5 +86,10 @@ class Account extends CI_Controller
 
         }
         $this->load->view('templates/footer');
+    }
+
+    public function deleteData()
+    {
+
     }
 }

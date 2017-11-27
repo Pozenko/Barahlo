@@ -68,7 +68,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             </a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-user-circle my_fa" aria-hidden="true"></i>
+                            <a href="<?=base_url()?>account"><i class="fa fa-user-circle my_fa" aria-hidden="true"></i>
                                 Мой аккаунт
                             </a>
                         </li>
