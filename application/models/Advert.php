@@ -44,10 +44,7 @@ class Advert extends CI_Model
     public function selectData($id_advert)
     {
         $id_adv = abs(intval($id_advert));
-        if($id_adv > $this->db->count_all($this->advertTable))
-        {
-            return false;
-        }
+
         $this->db->select('advert.title, advert.description, advert.price, advert.place_date, user.name, user.phone, user.reg_date, cities.city');
         $this->db->from('advert');
         $this->db->join('user', 'advert.id_user = user.id_user');
@@ -55,6 +52,9 @@ class Advert extends CI_Model
         $this->db->where('advert.id_advert', $id_adv);
 
         $query = $this->db->get();
+        if($query->num_rows() == 0)
+            return false;
+
         $data[] = $query->row();
         $this->db->reset_query();
 
@@ -73,6 +73,25 @@ class Advert extends CI_Model
 
         return $data;
     }
+    public function myAdvert()
+    {
+        $this->db->select('advert.id_advert, advert.title, advert.price, advert.place_date, advert.selling_options, images.small, categories.name');
+        $this->db->from('advert');
+        $this->db->join('images', 'images.id_images = advert.id_advert', 'left');
+        $this->db->join('categories', 'categories.id_cat = advert.id_cat');
+        $this->db->where('advert.id_user', $_SESSION['id_user']);
+        $query = $this->db->get();
+        $data = array();
+        if ($query->num_rows() > 0)
+        {
+            foreach ($query->result() as $row)
+            {
+                $data[] = $row;
+            }
+            return $data;
+        }
+        return false;
+    }
 
     //functions for pagination
 
@@ -85,11 +104,11 @@ class Advert extends CI_Model
     {
         $this->db->select('advert.id_advert, advert.title, advert.price, advert.place_date, advert.selling_options, images.small, categories.name');
         $this->db->from('advert');
-        $this->db->join('images', 'images.id_images = advert.id_advert', 'left');
+        $this->db->join('images', 'images.id_advert = advert.id_advert', 'left');
         $this->db->join('categories', 'categories.id_cat = advert.id_cat');
         $this->db->limit($limit, $start);
         $query = $this->db->get();
-
+        $data = array();
         if ($query->num_rows() > 0)
         {
             foreach ($query->result() as $row)

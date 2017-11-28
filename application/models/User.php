@@ -85,17 +85,13 @@ class User extends CI_Model
         $this->images->deleteImages($result);
 
         // delete advert
-        if(isset($result))
-        {
-            for($i = 0; $i < count($result);$i++)
-            {
-                $this->db->where('id_advert', $result[$i]['id_advert']);
-                $this->db->delete('advert');
-            }
-        }
+        $this->db->where('id_user', $_SESSION['id_user']);
+        $this->db->delete('advert');
+
         //delete from user
         $this->db->where('id_user', $_SESSION['id_user']);
         $this->db->delete($this->userTable);
+
         //delete from loguser
         $this->db->where('id_loguser', $_SESSION['id_user']);
         $this->db->delete($this->logUserTable);

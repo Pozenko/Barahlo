@@ -38,4 +38,5 @@ class Images extends CI_Model
 
         return true;
     }
+
 }

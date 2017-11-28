@@ -108,7 +108,7 @@
                     <?php }?>
                 </ul>
                 <?php } else{?>
-                    <div>Объявлений пока нет(</div>
+                    <h4 class="text-center">Объявлений пока нет(</h4>
                 <?php }?>
             </div>
             <div class="row text-center">

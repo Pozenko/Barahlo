@@ -29,7 +29,7 @@ class Create extends CI_Controller
         $data['categories'] = $this->database->selectAll('categories');
 
         $this->load->view('templates/header', $data);
-        $this->load->view('pages/createAdvert', $data);
+        $this->load->view('pages/advert_create', $data);
         $this->load->view('templates/footer');
     }
 
@@ -60,7 +60,7 @@ class Create extends CI_Controller
 
         if ($this->form_validation->run() == FALSE)
         {
-            $this->load->view('pages/createAdvert');
+            $this->load->view('pages/advert_create');
         }
         else
         {
@@ -136,7 +136,7 @@ class Create extends CI_Controller
     //configs
     private function getUploadConfig()
     {
-//        $config = array();
+        $config = array();
         $config['upload_path'] = $this->uploadPath;
         $config['allowed_types'] = 'jpeg|jpg|png';
         $config['max_size'] = '5120';//kb

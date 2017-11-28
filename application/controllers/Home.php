@@ -15,13 +15,8 @@ class Home extends CI_Controller
     public function index()
     {
         //set session from filters
-        var_dump($_POST);
-//        if(isset($_POST['id_cat']))
-//            $_SESSION['filter']['id_cat'] = intval($this->input->post('id_cat', true));
-//        if(isset($_POST['id_sabcat']))
-//            $_SESSION['filter']['id_subcat'] = intval($this->input->post('id_subcat', true));
-//        if(isset($_POST['selling_options']))
-//            $_SESSION['filter']['selling_options'] = $this->input->post('selling_options', true);
+//        var_dump($_POST);
+
 
 
         $data['title'] = 'Barahlo.by';
@@ -46,7 +41,6 @@ class Home extends CI_Controller
         {
             // get current page records
             $params["results"] = $this->advert->getCurrentPageRecords($settings['per_page'], $start_index);
-
             // use the settings to initialize the library
             $this->pagination->initialize($settings);
 
